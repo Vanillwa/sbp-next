@@ -18,8 +18,8 @@ export default function login() {
       console.log(response);
       // localStorage.setItem("token", response.data.jwt);
       // router.push("/");
-    } catch (error) {
-      console.error("로그인 실패", error);
+    } catch (error: any) {
+      console.log("로그인 실패", error.response.data);
     }
   };
 
