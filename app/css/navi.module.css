@@ -1,0 +1,17 @@
+.nav {
+  padding: 24px;
+}
+
+.navContainer {
+  display: flex;
+  color: white;
+  gap: 24px;
+}
+
+.navContainer li {
+  font-size: 1.5rem;
+}
+
+.here {
+  color: gray;
+}

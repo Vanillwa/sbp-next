@@ -1,40 +1,43 @@
 "use client";
-import React, { useState } from "react";
-import styles from "../css/login.module.css";
 
-import axios from "axios";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import instance from "../api/axios";
 
-export default function login() {
+export default function Join() {
   const [username, setUsername] = useState("");
+  const [nickname, setNickname] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
 
-  const handleLogin = async (event: React.FormEvent) => {
+  const handleJoin = async (event: React.FormEvent) => {
     event.preventDefault();
     try {
-      const response = await instance.post("/login", { username, password });
-      localStorage.setItem("accessToken", response.headers.access);
-      router.push("/");
+      console.log("username : " + username + "\n password : " + password);
+      const response = await instance.post("/join", { username, nickname, password });
+      router.push("/login");
     } catch (error: any) {
-      console.log("로그인 실패", error.response.data);
+      console.log("회원가입 실패", error.response.data);
     }
   };
 
   return (
     <div>
-      <div className={styles.container}>
-        <form onSubmit={handleLogin}>
+      <div>
+        <form onSubmit={handleJoin}>
           <div>
             <label>Username:</label>
             <input type='text' value={username} onChange={(e) => setUsername(e.target.value)} />
           </div>
           <div>
+            <label>Nickname:</label>
+            <input type='text' value={nickname} onChange={(e) => setNickname(e.target.value)} />
+          </div>
+          <div>
             <label>Password:</label>
             <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
           </div>
-          <button type='submit'>로그인</button>
+          <button type='submit'>회원가입</button>
         </form>
       </div>
     </div>
