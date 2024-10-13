@@ -18,7 +18,7 @@ export default function login() {
       localStorage.setItem("accessToken", response.headers.access);
       router.push("/");
     } catch (error: any) {
-      console.log("로그인 실패", error.response.data);
+      console.log("로그인 실패", error.response);
     }
   };
 
