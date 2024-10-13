@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import Username from "../components/username";
+import Username from "../component/username";
 
 export default function User() {
   return (

@@ -23,5 +23,5 @@ export default function Username() {
     getUsername();
   }, []);
 
-  return <div>{username}</div>;
+  return <>{username}</>;
 }
