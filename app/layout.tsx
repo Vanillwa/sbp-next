@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navi from "./component/navi";
-import { AuthProvider } from "./context/authContext";
+import Navi from "./component/navi/navi";
 
 export const metadata: Metadata = {
   title: "Simple Board",
@@ -15,12 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ko'>
-      <body>
-        <AuthProvider>
-          <Navi />
-          {children}
-        </AuthProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

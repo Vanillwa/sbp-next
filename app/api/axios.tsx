@@ -27,6 +27,7 @@ instance.interceptors.response.use(
 
     console.log(response);
     if (response.data === "invalid access token" || response.data === "invalid refresh token") {
+      localStorage.removeItem("accessToken");
       return;
     }
     if (response.data === "access token expired") {

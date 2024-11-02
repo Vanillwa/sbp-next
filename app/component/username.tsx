@@ -12,7 +12,8 @@ export default function Username() {
   async function getUsername() {
     try {
       const response = await instance.get("/user");
-      setUsername(response.data);
+      console.log(response.data);
+      // setUsername(response.data);
     } catch (error) {
       alert("로그인이 필요한 기능입니다.");
       router.push("/login");

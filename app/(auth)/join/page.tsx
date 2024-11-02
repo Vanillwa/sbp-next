@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import instance from "../api/axios";
+import instance from "../../api/axios";
 
 export default function Join() {
   const [username, setUsername] = useState("");
